@@ -1,38 +1,133 @@
-.App {
-  text-align: center;
+
+.app{
+   width: 100%;
+   height: 100vh;
+   display: flex;
+   
+   align-items: center;   
+   flex-direction: column;   
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1{
+      font-size: 50px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+span{
+      margin: 20px 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.area-input{
+      width: 500px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 15px;
 }
 
-.App-link {
-  color: #61dafb;
+.area-input input{
+      width: 100%;
+      margin-bottom: 12px;
+      height: 46px;
+      background-color: #121212;
+      border: 0;
+      border-radius:6px;
+      color: #fff;
+      padding: 0 12px;
+      text-align: center;
+      font-size:18px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button{
+      width: 100%;
+      height: 46px;
+      border: 0;
+      border-radius:6px;
+      background-color: #357AFF;
+      color: #fff;
+      font-size: 18px;
 }
+
+button.darkMode{
+      color: #FFF;
+      background-color: #633BBC;
+      max-width: 150px;
+      min-width: 100px;
+      padding: 0 10px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: 40px;
+      margin-bottom: 200px;
+}
+
+h2{
+      margin-top: 28px;
+      font-size: 20px;
+}
+
+.aboutMe{
+      margin-top: 80px;
+}
+
+.social{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+}
+
+.social a{
+      display: flex;
+}
+
+
+
+
+/* Dark Mode */
+
+.app.active{
+     background: #27252A
+   }
+   
+   h1.active{
+         color: #C8C8C8;
+   }
+   
+   span.active{
+         color: #C8C8C8;
+   }
+   
+   .area-input input.active{
+        
+         background-color: #633BBC;
+         color: #fff;
+   }
+   
+   button.active{
+         background-color: #a80359;
+         color: #000;
+   
+   }
+   
+   button.darkMode.active{
+      background-color: #FFF;
+      color: #633BBC;
+   }
+   
+   h2.active{
+         color: #fff;
+   }
+   
+   .aboutMe.active{
+         color: #C8C8C8;
+         
+   }
+   
+   .social.active{
+         border-radius: 6px;
+         width: 20%;
+         padding: 10px;
+   }
+
+ 
+  
