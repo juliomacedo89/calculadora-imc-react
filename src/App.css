@@ -1,19 +1,89 @@
-
 .app{
    width: 100%;
    height: 100vh;
    display: flex;
    
    align-items: center;   
-   flex-direction: column;   
+   flex-direction: column; 
+   background: #FFFAFA;
+   animation: show3 1s forwards;
 }
 
+.darkModeArea{
+      max-width: 820px;
+      width: 100%;
+      display: flex;
+      gap: 20px;
+      align-items: center; 
+      justify-content: center;
+      margin-top: 20px;
+      margin-bottom: 200px;    
+}
+
+.dark{
+      max-width: 60px;
+      width: 100%;
+      height: 33px;
+      border: 2px solid #000;
+      border-radius: 20px;
+      padding: 5px 5px 3px 5px;
+      background: #000;
+}
+
+.dark.active{
+      background: #FFF;
+      animation: show2 1s forwards;
+}
+
+.ball{
+      max-width: 20px;
+      width: 100%;
+      height: 20px;
+      border: 1px solid #000;
+      border-radius: 20px;
+      background: #FFF;
+      margin-left: 1px;
+      margin-bottom: 5px;
+      padding: 5px;
+      cursor: pointer;
+      animation: show1 1s forwards;
+}
+
+.ball.active{
+      max-width: 20px;
+      width: 100%;
+      height: 20px;
+      border: 1px solid #000;
+      background: #000;
+      border-radius: 20px;
+      margin-left: 27px;
+      margin-bottom: 5px;
+      padding: 5px;
+      cursor: pointer;
+      animation: show 1s forwards;
+}
+
+.light{
+      max-width: 50px;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+}
+
+.moon{
+      max-width: 50px;
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      margin-left:-5px;
+}
+    
 h1{
-      font-size: 50px;
+      font-size: 50px;     
 }
 
 span{
-      margin: 20px 0;
+      margin: 20px 0;     
 }
 
 .area-input{
@@ -21,7 +91,7 @@ span{
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 0 15px;
+      padding: 0 15px;      
 }
 
 .area-input input{
@@ -34,7 +104,7 @@ span{
       color: #fff;
       padding: 0 12px;
       text-align: center;
-      font-size:18px;
+      font-size:18px;     
 }
 
 button{
@@ -44,28 +114,17 @@ button{
       border-radius:6px;
       background-color: #357AFF;
       color: #fff;
-      font-size: 18px;
+      font-size: 18px;   
 }
 
-button.darkMode{
-      color: #FFF;
-      background-color: #633BBC;
-      max-width: 150px;
-      min-width: 100px;
-      padding: 0 10px;
-      font-size: 12px;
-      font-weight: 700;
-      margin-top: 40px;
-      margin-bottom: 200px;
-}
 
 h2{
       margin-top: 28px;
-      font-size: 20px;
+      font-size: 20px; 
 }
 
 .aboutMe{
-      margin-top: 80px;
+      margin-top: 80px;     
 }
 
 .social{
@@ -73,61 +132,93 @@ h2{
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 20px;
+      gap: 20px;   
 }
 
 .social a{
-      display: flex;
+      display: flex;   
 }
 
 
-
-
-/* Dark Mode */
+/* ----------  Dark Mode ---------- */
 
 .app.active{
-     background: #27252A
-   }
-   
-   h1.active{
-         color: #C8C8C8;
-   }
-   
-   span.active{
-         color: #C8C8C8;
-   }
-   
-   .area-input input.active{
-        
-         background-color: #633BBC;
-         color: #fff;
-   }
-   
-   button.active{
-         background-color: #a80359;
-         color: #000;
-   
-   }
-   
-   button.darkMode.active{
-      background-color: #FFF;
-      color: #633BBC;
-   }
-   
-   h2.active{
-         color: #fff;
-   }
-   
-   .aboutMe.active{
-         color: #C8C8C8;
-         
-   }
-   
-   .social.active{
-         border-radius: 6px;
-         width: 20%;
-         padding: 10px;
-   }
+      background: #27252A;
+      animation: show2 1s forwards;
+}
 
- 
-  
+h1.active{
+      color: #C8C8C8;   
+}
+
+span.active{
+      color: #C8C8C8; 
+}
+
+.area-input input.active{ 
+      background-color: #633BBC;
+      color: #fff;
+}
+
+button.active{
+      background-color: #a80359;
+      color: #f9f9f9;
+}
+
+h2.active{
+      color: #fff; 
+}
+
+.aboutMe.active{
+      color: #C8C8C8;     
+}
+
+.social.active{
+      border-radius: 6px;
+      width: 20%;
+      padding: 10px;  
+}
+
+/* ----------  key frames ---------- */
+@keyframes show{
+      from{
+            opacity: 0;
+            transform: translate3d(-30px, 0 ,0);
+      }
+      to{
+            opacity: 1;
+            transform: 0px, 0, 0;
+      }
+}
+
+@keyframes show1{
+      from{
+            opacity: 0;
+            transform: translate3d(30px, 0 ,0);
+      }
+      to{
+            opacity: 1;
+            transform: 0px, 0 ,0;
+      }
+}
+
+@keyframes show2{
+      from{
+            opacity: 0;
+          
+      }
+      to{
+            opacity: 1;
+           
+      }
+}
+
+@keyframes show3{
+      from{
+            opacity: 0;
+      }
+      to{
+            opacity: 1;
+           
+      }
+}

@@ -2,6 +2,15 @@ import {useState} from 'react'
 import './app.css'
 
 export default function App(){
+
+  function darkModeStart(){
+    let btnDark = document.querySelectorAll('.ball, .dark, .app, h1, h2, input, button, span')
+    btnDark.forEach((item)=>{
+      item.classList.toggle('active')
+    })
+  }
+  
+
   const [peso, setPeso] = useState("")
   const [altura, setAltura] = useState("")
   const [mensagem, setMensagem] = useState("")
@@ -11,49 +20,40 @@ export default function App(){
     const alt = altura/100
     const imc = peso /(alt * alt)
     const imcFinal = imc.toFixed(1)
-    
-    if(imc < 18.6){
-      setMensagem(`Seu IMC é ${imcFinal}! Você está abaixo do peso ideal`)
+
+   if(imc < 18.6){
+      setMensagem(`Seu IMC é ${imcFinal}! Você está abaixo do peso ideal.`)
     } else if (imc >= 18.8 && imc <24.9){
-      setMensagem(`Seu IMC é ${imcFinal}! Você está com o peso ideal`)
+      setMensagem(`Seu IMC é ${imcFinal}! Você está com o peso ideal.`)
     } else if (imc >= 24.9 && imc <34.9){
-      setMensagem(`Seu IMC é ${imcFinal}! Você está acima do peso ideal`)
+      setMensagem(`Seu IMC é ${imcFinal}! Você está acima do peso ideal.`)
     } else if (imc > 34-9){
       setMensagem(`Seu IMC és ${imcFinal}! Você está em estado de obesidade!`)
     }
-  }    
+  }
 
-  function darkMode(){
-      
-      document.querySelectorAll('h1, h2, input, button, span, div, img')
-        .forEach((item)=>{
-          item.classList.toggle('active')
-        })
-      let btnDescription = document.querySelector('.darkMode')
-      
-      if(btnDescription.textContent === "Dark Mode 🌛"){
-        btnDescription.innerHTML = "Light Mode ☀️"
-      } else{
-        btnDescription.innerHTML = "Dark Mode 🌛"
-      }
-      
-    }
-    
 
   return(
-    
-    
     <div className="app">
-      <button onClick={darkMode} className="darkMode">
-          Dark Mode 🌛
-        </button>
+        <div className="darkModeArea">
+          <div className="light"> 
+                <picture>☀️</picture>
+          </div>
+          <div className="dark"> 
+                <div className="ball" onClick={darkModeStart}></div>
+          </div>
+          <div className="moon"> 
+                <picture>🌛</picture>
+          </div>
+        </div>
 
-      <h1>Calculadora IMC</h1>
-      <span>Vamos calcular o seu IMC</span>
+        <h1>Calculadora IMC</h1>
+        <span>Vamos calcular o seu IMC</span>
 
-      <div className="area-input">
+        <div className="area-input">
         <input 
         type="text" 
+        keyboardType = 'numeric'
         placeholder="Peso em kg (Ex: 90)"
         value={peso}
         onChange={(e)=> setPeso(e.target.value)}
@@ -73,7 +73,7 @@ export default function App(){
           {mensagem}
         </h2>
 
-        
+       
         <span className="aboutMe">
           About me:
         </span>
@@ -86,6 +86,17 @@ export default function App(){
           </a>
         </div>
       </div>
+    
+    
+    
+    
+    
+    
+    
+    
     </div>
+
+    
+    
   )
 }
