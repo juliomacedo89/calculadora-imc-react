@@ -1,6 +1,9 @@
 import {useState} from 'react'
 import './app.css'
 
+import githubImg from './assets/img/github.png'
+import linkedinImg from './assets/img/linkedin.png'
+
 export default function App(){
 
   function darkModeStart(){
@@ -14,7 +17,7 @@ export default function App(){
   const [peso, setPeso] = useState("")
   const [altura, setAltura] = useState("")
   const [mensagem, setMensagem] = useState("")
-  const [dark, setDark] = useState("")
+  /* const [dark, setDark] = useState("") */
 
   function calcularIMC() {
     const alt = altura/100
@@ -28,7 +31,7 @@ export default function App(){
     } else if (imc >= 24.9 && imc <34.9){
       setMensagem(`Seu IMC é ${imcFinal}! Você está acima do peso ideal.`)
     } else if (imc > 34-9){
-      setMensagem(`Seu IMC és ${imcFinal}! Você está em estado de obesidade!`)
+      setMensagem(`Seu IMC é ${imcFinal}! Você está em estado de obesidade!`)
     }
   }
 
@@ -79,10 +82,10 @@ export default function App(){
         </span>
         <div className="social">
           <a href="https://github.com/juliomacedo89" className="img-socialNone">
-            <img src="img/github.png" alt="Github"  />
+            <img src={githubImg} alt="Github"  />
           </a>
           <a href="https://www.linkedin.com/in/j%C3%BAlio-macedo-6ab034180/">
-            <img src="img/linkedin.png" alt="Linkedin" className="img-social" />
+            <img src={linkedinImg} alt="Linkedin" className="img-social" />
           </a>
         </div>
       </div>
